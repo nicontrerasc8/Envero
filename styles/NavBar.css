@@ -1,0 +1,127 @@
+nav{
+     background-color: var(--primary-white);
+     border-bottom: 5px solid var(--violet-primary);
+     position: fixed;
+     width: 100vw;
+     top: 0;
+     height: 6rem;
+     z-index: 2;
+     left: 0;
+     padding: 5px 5vw;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+}
+nav h2{
+     font-size: clamp(2rem, calc(2vh + 2vw), calc(2vh + 2vw));
+     margin: 0;
+     color: var(--brown);
+}
+nav .hamburger{
+     position: relative;
+     z-index: 4;
+     background-color: transparent;
+     padding: 5px;
+     height: 80px;
+     cursor: pointer;
+  transition: all .5s ease-in-out;
+     display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+nav .hamburger span{
+     position: relative;
+     border-radius: 5px;
+     width: 60px;
+     transition: 500ms;
+     height: 6px;
+     background-color: var(--violet-secondary);
+}
+.hamburger .hamburger-2{
+     background-color: var(--violet-primary);
+}
+.open-nav .hamburger-1{
+     transform: rotate(45deg);
+     top: 16px;
+}
+.open-nav .hamburger-2{
+     width: 0;
+}
+.open-nav .hamburger-3{
+     transform: rotate(-45deg);
+     bottom: 16px;
+}
+aside{
+     transition: 500ms;
+     position: fixed;
+     top: 6rem;
+     padding: 10px 1vw;
+     height: calc(100vh - 6rem);
+     right: -100vw;
+     background-color: var(--violet-primary);
+     width: 100vw;
+     color: var(--primary-white);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+}
+.ActiveAside{
+     right: 0;
+}
+aside h2{
+     font-size: clamp(2rem, calc(2vh + 2vw), calc(2vh + 2vw));
+     margin: 0;
+     padding:0;
+}
+aside ul{
+     margin: 10px 0;
+     padding: 0;
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+     justify-content: center;
+}
+aside ul button{
+     background-color: transparent;
+     color: var(--primary-white);
+     font-weight: 600;
+     border-radius: 5px;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     font-size: clamp(25px, calc(2vh + 1vw), calc(1vh + 2vw));
+     padding: 10px;
+     border: 3px solid var(--violet-secondary);
+     transition: ease-out 500ms;
+}
+aside ul button::before{
+     transition: 500ms ease;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     right: 50%;
+     bottom: 0;
+     opacity: 0;
+     content: '';
+     background-color: var(--violet-secondary);
+}
+aside ul button:hover::before{
+     transition: 500ms all ease;
+     left: 0;
+     right: 0;
+     opacity: 1;
+     z-index: -1;
+}
+aside ul button div{
+     width: calc(5vw + 4vh + 1rem);
+     height: calc(5vw + 4vh + 1rem);
+}
+aside ul button h4{
+     margin: 0;
+}
