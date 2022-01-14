@@ -4,8 +4,8 @@
      padding: 1rem 1vw;
      justify-content: center;
      align-items: center;
-     flex-direction: column;
      gap: 1rem;
+     flex-direction: column;
 }
 .Admin-SignIn span{
      width: clamp(300px, 30%, 30%);
@@ -20,8 +20,8 @@
      border: none;
      background-color: transparent;
      font-size: clamp(25px, calc(2vh + 1vw), calc(2vh + 2vw));
-     color: var(--violet-primary);
 }
+
 .admin-container{
      display: flex;
      flex-direction: column;

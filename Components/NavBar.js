@@ -43,7 +43,7 @@ const CategoriesData = [
 ]
 
 const NavButton = ({text, ImgSource}) => {
-     return <button>
+     return <button className='btn-secondary'>
      <div>
           <Image src={ImgSource} sizes="320 640 750" quality={100} layout="responsive"
        />
@@ -66,7 +66,7 @@ const NavBar = () => {
                </Link>  
                <Link href={"/"}>
                     <a>
-                    <h2>Envero</h2>
+                    <h2>SuMarket</h2>
                     </a>
                </Link> 
                <div onClick={OpenNavigation} className={IsOpen ? 'hamburger open-nav' : 'hamburger'}>

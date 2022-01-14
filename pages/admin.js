@@ -34,7 +34,9 @@ const PasswordComponent = () => {
                 </button>
       </span>
       <button type='button' className='btn-primary' onClick={VerifyPassword}>
-           Submit
+           <strong>
+                Submit
+           </strong>
       </button>
  </div>
 }
@@ -54,7 +56,7 @@ const AdminPage = () => {
      const {AdminLoggedIn} = UseGeneralContext()
 
      return <>
-     <MetaTags title='Administrador | Envero'/>
+     <MetaTags title='Administrador | SuMarket'/>
         {
              AdminLoggedIn ? <AdminComponent/>
               : <PasswordComponent/>

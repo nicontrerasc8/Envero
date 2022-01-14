@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 
 const MetaTags = ({
-     title = 'Envero - Tienda online de productos orgánicos',
+     title ='SuMarket - Tienda online de productos orgánicos',
      description = ''
 }) => {
      return <Head>

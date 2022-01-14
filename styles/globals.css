@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
 :root{
-  --violet-primary: #551731;
-  --violet-secondary: #7a2d4d;
-  --brown: #262501;
-  --primary-white: #ffeefc;
-  --secondary-white: #e0d6dd;
-  --green: #169c50;
+  --green: #19b859;
+  --secondary-green: #65cd7f;
+  --orange: #e7742d;
+  --white: #edfff3;
+  --black: #131a16;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--primary-white);
+  background-color: var(--white);
 }
 
 a {
@@ -42,48 +41,60 @@ a {
 }
 .btn-primary{
   position: relative;
-  color: var(--primary-white);
-  background-image: linear-gradient(to bottom, var(--violet-primary), var(--violet-secondary));
-  border-left: 0;
-  border-right: 0;
-  border-top: 4px solid var(--violet-primary);
-  border-bottom: 4px solid var(--violet-secondary);
+  color: var(--white);
+  background-color: var(--orange);
+  border-radius: 10px;
+  z-index: 1;
 }
-.btn-primary:hover{
-  transform: scale(1.05);
+.btn-primary::before{
+  content: "";
+  position: absolute;
+  background-color: var(--green);
+  border-radius: inherit;
+  width: 0;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover::before{
+  width: 100%;
 }
 .btn-secondary{
-     color: var(--brown);
-     background-color: transparent;
-     position: relative;
-     border-color: var(--green);
-     z-index: 1;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-}
-.btn-secondary::before{
-    transition: 500ms ease;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: '';
-}
-.btn-secondary:hover::before{
-    transition: 500ms all ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    z-index: -1;
-}
-.btn-secondary::before{
-  background-color: var(--green);
+  background-color: transparent;
+  color: var(--black);
+  font-weight: 600;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(25px, calc(2vh + 1vw), calc(1vh + 2vw));
+  padding: 10px;
+  border: 4px solid var(--orange);
+  transition: ease-out 500ms;
 }
 .btn-secondary:hover{
-  color: var(--primary-white);
-  border-color: var(--green);
+  color: var(--white);
+}
+.btn-secondary::before{
+  transition: 500ms ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: var(--orange);
+}
+.btn-secondary:hover::before{
+  transition: 500ms all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: -1;
 }
 
