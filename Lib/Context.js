@@ -4,7 +4,7 @@ const GeneralContext = createContext()
 const UseGeneralContext = () => useContext(GeneralContext)
 
 export const GeneralContextProvider = ({children}) => {
-     const [AdminLoggedIn, setAdminLoggedIn] = useState(false)
+     const [AdminLoggedIn, setAdminLoggedIn] = useState(true)
      const [Password, setPassword] = useState("")
 
      return <GeneralContext.Provider value={{AdminLoggedIn, setAdminLoggedIn, Password, setPassword}}>

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import Logo from "../public/logo.png"
+import Logo from "../public/logo-greenBack.png"
 import Aceite from "../public/aceite.svg"
 import Cafe from "../public/cafe.svg"
 import Cereales from "../public/cereales.svg"
