@@ -141,7 +141,7 @@ const AdminComponent = () => {
                     />
                     <label>Elije una imagen</label>
                <input type="file" onChange={UploadFile} accept="image/x-png,image/gif,image/jpeg" />
-               {DownloadURL ? <a href={DownloadURL} target="_blank">Link de la imagen</a>:<p>Por favor sube la imagen</p>}
+               {DownloadURL ? <a href={DownloadURL} rel='nonreferrer' target="_blank">Link de la imagen</a>:<p>Por favor sube la imagen</p>}
                <button className='btn-primary' onClick={SubmitFormData} type='button'>
                     Añade el producto
                </button>
