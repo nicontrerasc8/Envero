@@ -60,9 +60,9 @@ const AdminComponent = () => {
 
      const UploadFile = async(e) => {
           const file =  Array.from(e.target.files)[0];
-          const extension = file.type.split('/')[1];
+          var ImageUuid = uuid()
           setLoading(true)
-          const ref = storage.ref(`uploads/${Date.now()}.${extension}`)
+          const ref = storage.ref(`uploads/${Date.now()}.${ImageUuid}`)
 
           const task = ref.put(file)
 
@@ -141,7 +141,7 @@ const AdminComponent = () => {
                     />
                     <label>Elije una imagen</label>
                <input type="file" onChange={UploadFile} accept="image/x-png,image/gif,image/jpeg" />
-               {DownloadURL && <a href={DownloadURL} target="_blank">Link de la imagen</a>}
+               {DownloadURL ? <a href={DownloadURL} target="_blank">Link de la imagen</a>:<p>Por favor sube la imagen</p>}
                <button className='btn-primary' onClick={SubmitFormData} type='button'>
                     Añade el producto
                </button>
