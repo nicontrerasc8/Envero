@@ -94,3 +94,9 @@
      background-color: var(--orange);
      color: var(--white);
 }
+.admin-container h3{
+     font-size: calc(2vw + 2vh);
+     padding: 3rem 0 0 00;
+     width: 100%;
+     border-top: 4px dashed var(--orange);
+}

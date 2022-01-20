@@ -1,11 +1,13 @@
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 import useKeypress from 'react-use-keypress'
 import uuid from 'react-uuid'
 import { Brands, Categories } from '../Arrays'
 import LoadingComponent from '../Components/Loading'
 import MetaTags from '../Components/MetaTags'
+import ProductCartList from '../Components/ProductCartList'
 import Selector from '../Components/Selector'
 import UseGeneralContext from '../Lib/Context'
 import { firestore, storage } from '../Lib/Firebase'
@@ -57,6 +59,7 @@ const AdminComponent = () => {
      const [Price, setPrice] = useState(Number);
      const [Loading, setLoading] = useState(false);
      const [DownloadURL, setDownloadURL] = useState(null);
+     const [CartData, setCartData] = useState([]);
 
      const UploadFile = async(e) => {
           const file =  Array.from(e.target.files)[0];
@@ -88,6 +91,7 @@ const AdminComponent = () => {
                     Categoria: Category,
                     Marca: Brand,
                     Imagen: DownloadURL,
+                    id: Uuid,
                }
           )
           await Batch.commit().then(
@@ -96,9 +100,9 @@ const AdminComponent = () => {
                setCategory("Selecciona la categoria"),
                setBrand("Selecciona la marca"),
                setDownloadURL(null),
-               alert("Perfecto ingeniero, subiste tu producto.")
+               toast.success("Listo, subiste el producto con éxito.")
           )
-         } else alert("Por favor ingeniero, rellene el formulario.")
+         } else toast.error("Por favor ingeniero, rellene el formulario.")
      }
 
      const ChangeCategory = (data) => {
@@ -111,6 +115,28 @@ const AdminComponent = () => {
           setOpenBrand(false)
      }
 
+     const DeleteProduct = async(uID) => {
+          setLoading(true)
+          const ProductDoc = firestore.doc(`/products/${uID}`)
+          await ProductDoc.delete();
+          toast.success("Producto eliminado con éxito, doctor.")
+          setLoading(false)
+     }
+
+     useEffect(() => {
+       setCartData([])
+       setLoading(true)
+       const CartCollection = firestore.collection("products")
+       CartCollection.get().then(
+          (querySnapshot) => {
+               querySnapshot.forEach((doc) => {
+                    setCartData(CartData => [...CartData, doc.data()])
+               })
+          }
+       )
+       setLoading(false)
+     }, [DownloadURL, ]);
+     
 
      return <div className='page admin-container'>
           {Loading && <LoadingComponent/>}
@@ -147,6 +173,7 @@ const AdminComponent = () => {
                </button>
           </div>
           <h3>Productos actuales:</h3>
+          <ProductCartList carts={CartData} IsAdmin={true} DeleteProduct={DeleteProduct}/>
      </div>
 }
 

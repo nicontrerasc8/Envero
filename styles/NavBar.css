@@ -95,6 +95,10 @@ aside ul button div{
      width: calc(5vw + 4vh + 1rem);
      height: calc(5vw + 4vh + 1rem);
 }
+aside ul button div img{
+     width: 100%;
+     height: 100%;
+}
 aside ul button h4{
      margin: 0;
 }

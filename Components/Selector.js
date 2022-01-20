@@ -13,9 +13,9 @@ const Selector = ({ChangeOpenValue, TextValue, IsOpen, Options, ChangeFN, ClassN
        {
            (IsOpen && Options.length > 0) && Options.map((data, idx) => {
                  return <em 
-                              onClick={() => ChangeFN(data)}
+                              onClick={() => ChangeFN(data.text)}
                               key={idx} type='button' >
-                      {data}
+                      {data.text}
                  </em>
             })
        }

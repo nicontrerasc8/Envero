@@ -2,50 +2,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { Categories } from '../Arrays'
 import Logo from "../public/logo-greenBack.png"
-import Aceite from "../public/aceite.svg"
-import Cafe from "../public/cafe.svg"
-import Cereales from "../public/cereales.svg"
-import FrutosSecos from "../public/frutos-secos.svg"
-import Miel from "../public/honey.svg"
-import Lacteos from "../public/milk.svg"
-import Sal from "../public/salt.svg"
 
-const CategoriesData = [
-     {
-          image: Aceite,
-          text:"Aceite"
-     },
-     {
-          image: Cafe,
-          text:"Café"
-     },
-     {
-          image: Cereales,
-          text:"Cereales"
-     },
-     {
-          image: FrutosSecos,
-          text: "Frutos secos"
-     },
-     {
-          image: Miel,
-          text:"Miel"
-     },
-     {
-          image: Lacteos,
-          text: "Lácteos"
-     },
-     {
-          image: Sal,
-          text:"Sal"
-     },
-]
 
 const NavButton = ({text, ImgSource}) => {
      return <button className='btn-secondary'>
      <div>
-          <Image src={ImgSource} sizes="320 640 750" quality={100} layout="responsive"
+          <LazyLoadImage src={ImgSource ? ImgSource : Logo}
        />
      </div>
      <h4>{text}</h4>
@@ -61,7 +26,7 @@ const NavBar = () => {
           <nav>
                <Link href={"/"}>
                     <a>
-                    <Image src={Logo} width={100} height={100}/>  
+                    <img src={"https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/logo-greenBack.png?alt=media&token=454b9719-6af5-4707-86b0-bc54b1959f88"} width={100} height={100}/>  
                     </a>
                </Link>  
                <Link href={"/"}>
@@ -79,8 +44,8 @@ const NavBar = () => {
                <h2>Categorias</h2>
                <ul>
                     {
-                         CategoriesData && CategoriesData.map((data, idx) => {
-                              return <NavButton key={idx} ImgSource={data.image} text={data.text}/>
+                         Categories && Categories.map((data, idx) => {
+                              return <NavButton key={idx} ImgSource={data.url} text={data.text}/>
                          })
                     }
                </ul>
