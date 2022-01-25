@@ -1,9 +1,17 @@
 import React from 'react';
+import UseGeneralContext from '../Lib/Context';
 
 const ProductCart = ({data, IsAdmin, DeleteProduct}) => {
 
+     const { setProductData, ChangeProductCartValue } = UseGeneralContext()
+
+     const OpenContainer = () => {
+          setProductData(data)
+          ChangeProductCartValue()
+     }
+
   return <article>
-       <img src={data.Imagen} effect='blur'/>
+       <img src={data.Imagen} loading='lazy'/>
        <h4>
             {data.Producto}
        </h4>
@@ -14,11 +22,9 @@ const ProductCart = ({data, IsAdmin, DeleteProduct}) => {
        {
             IsAdmin ? <button className='btn-primary' onClick={() => DeleteProduct(data.id)}>
                Eliminar
-            </button> : <a href={`https://api.whatsapp.com/send?phone=51949161510&text=${`¡Hola! vengo de la web de bungalows PH. Me gustaría ordenar ${data.Producto}.`}`} rel='noreferrer' target="_blank">
-               <button className='btn-primary'>
+            </button> : <button className='btn-primary' onClick={OpenContainer}>
                  Comprar
-               </button>
-            </a>
+            </button>
        }
   </article>;
 };

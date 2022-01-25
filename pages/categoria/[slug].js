@@ -13,7 +13,8 @@ const Category = () => {
      useEffect(() => {
           console.log(slug)
           setData([])
-          const CartCollection = firestore.collection("products").where("Categoria", "==", slug)
+          if(slug){
+               const CartCollection = firestore.collection("products").where("Categoria", "==", slug)
           CartCollection.get().then(
                (querySnapshot) => {
                     querySnapshot.forEach((doc) => {
@@ -21,6 +22,8 @@ const Category = () => {
                     })
                }
             )
+          }
+          else router.push("/")
      }, [slug]);
      
 

@@ -5,6 +5,7 @@ import '../styles/NavBar.css'
 import '../styles/Admin.css'
 import '../styles/Home.css'
 import { Toaster } from 'react-hot-toast'
+import ProductSliders from '../Components/ProductSliders'
 
 function MyApp({ Component, pageProps }) {
   return <GeneralContextProvider>
@@ -40,6 +41,7 @@ function MyApp({ Component, pageProps }) {
         }
       }}
     />
+    <ProductSliders/>
   </GeneralContextProvider>
 }
 

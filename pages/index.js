@@ -9,7 +9,7 @@ import ProductCartList from '../Components/ProductCartList'
 import { DropInFromLeft } from '../Lib/Animations'
 import UseGeneralContext from '../Lib/Context'
 import { firestore } from '../Lib/Firebase'
-import Waves from "../public/waves.svg"
+import Waves from "../public/waves(1).svg"
 
 const Landing = () => {
 

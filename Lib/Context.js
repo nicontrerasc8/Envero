@@ -7,8 +7,19 @@ export const GeneralContextProvider = ({children}) => {
      const [AdminLoggedIn, setAdminLoggedIn] = useState(false)
      const [Password, setPassword] = useState("")
      const [OpenNav, setOpenNav] = useState(false);
+     const [ProductData, setProductData] = useState([]);
+     const [ProductCartAvailable, setProductCartAvailable] = useState(false);
 
-     return <GeneralContext.Provider value={{AdminLoggedIn, setAdminLoggedIn, Password, setPassword, OpenNav, setOpenNav}}>
+     const ChangeProductCartValue = () => setProductCartAvailable(!ProductCartAvailable)
+
+     return <GeneralContext.Provider 
+          value={{
+               AdminLoggedIn, setAdminLoggedIn, 
+               Password, setPassword, 
+               OpenNav, setOpenNav, 
+               ProductData, setProductData,
+               ChangeProductCartValue, 
+               ProductCartAvailable, setProductCartAvailable}}>
           {children}
      </GeneralContext.Provider>
 }
