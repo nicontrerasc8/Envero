@@ -15,7 +15,6 @@
 }
 .landing{
      padding: 1rem 5vw;
-     border-bottom: 5px solid var(--green);
      display: flex;
      flex-wrap: wrap;
      grid-gap: 1rem;

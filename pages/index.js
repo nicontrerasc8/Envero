@@ -1,15 +1,12 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
-import { Brands, HighlightText } from '../Arrays'
+import { HighlightText } from '../Arrays'
 import MetaTags from '../Components/MetaTags'
 import ProductCartList from '../Components/ProductCartList'
-import { DropInFromLeft } from '../Lib/Animations'
 import UseGeneralContext from '../Lib/Context'
 import { firestore } from '../Lib/Firebase'
-import Waves from "../public/waves(1).svg"
 
 const Landing = () => {
 
