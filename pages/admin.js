@@ -17,7 +17,7 @@ const PasswordComponent = () => {
      const [VisiblePassword, setVisiblePassword] = useState(false)
 
      const VerifyPassword = () => {
-          if(Password == "SuMarket2022") setAdminLoggedIn(true)
+          if(Password == "racing") setAdminLoggedIn(true)
           else {
                alert("Incorrecto, intenta de nuevo")
           }
