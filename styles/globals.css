@@ -44,9 +44,6 @@ a {
 .display-none{
   display: none;
 }
-.page{
-  margin-top: 6rem;
-}
 .loading{
   background-color: var(--green);
   color: var(--white);
@@ -157,9 +154,10 @@ a {
   gap: 1rem;
 }
 .cart-list article{
-  width: calc(200px + 10vw);
+  width: clamp(310px ,calc(200px + 10vw), calc(200px + 10vw));
   border: 4px solid var(--orange);
   border-radius: 10px;
+  text-align: center;
   padding-bottom: 1rem;
 }
 .cart-list article img{
@@ -177,6 +175,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 0 5% 1rem 5%;
+  text-align: left;
   align-items: flex-start;
 }
 .cart-list article div p{

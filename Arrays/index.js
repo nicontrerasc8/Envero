@@ -24,8 +24,8 @@ export const Categories = [
           text: "Lacteos"
      },
      {
-          url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Fsalt.svg?alt=media&token=c69b4757-492f-48c1-bc7e-824e49f5ad0e",
-          text:"Sal",
+          url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Foutput-onlinepngtools%20(13).png?alt=media&token=b016c949-d548-435d-b435-7cb9125509fb",
+          text:"Licores",
      }
 ]
 export const Brands = [
@@ -37,5 +37,14 @@ export const Brands = [
      },
      {
           text: "Green Ocean Coffee"
+     },
+     {
+          text: "Castellano",
+     },
+     {
+          text: "Andariego"
      }
+]
+export const HighlightText = [
+     "Un vinito", "Aceite de oliva", "Café orgánico", "Granola natural", "Miel de abeja", "Pisco peruano", 
 ]

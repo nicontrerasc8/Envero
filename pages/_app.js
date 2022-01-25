@@ -3,6 +3,7 @@ import { GeneralContextProvider } from '../Lib/Context'
 import '../styles/globals.css'
 import '../styles/NavBar.css'
 import '../styles/Admin.css'
+import '../styles/Home.css'
 import { Toaster } from 'react-hot-toast'
 
 function MyApp({ Component, pageProps }) {
@@ -31,8 +32,8 @@ function MyApp({ Component, pageProps }) {
             icon: '🚀',
             duration: 5000,
             style: {
-                background: "var(--green)",
-                color: "var(--white)",
+                background: "var(--white)",
+                color: "var(--green)",
                 fontWeight: "600",
                 border: "3px solid",
             },

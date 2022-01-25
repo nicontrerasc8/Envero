@@ -1,0 +1,61 @@
+.home-page{
+     padding: 2rem 5vw;
+     width: 100vw;
+}
+.home-page h2{
+     text-align: center;
+     margin: 0rem 0 1rem 0;
+     font-size: calc(1rem + 2vh + 1vw);
+}
+.home-page.non-margin{
+     margin-top: 1rem;
+}
+.typewriter{
+     color: var(--green);
+}
+.landing{
+     padding: 1rem 5vw;
+     border-bottom: 5px solid var(--green);
+     display: flex;
+     flex-wrap: wrap;
+     grid-gap: 1rem;
+     justify-content: space-between;
+     align-items: center;
+}
+.landing h2{
+     font-size: clamp(2rem, calc(1vh + 2vw + 1rem), calc(1vh + 2vw + 1rem));
+     margin: 10px 0;
+}
+.landing-icon{
+     position: relative;
+     color: var(--green);
+     font-size: calc(5vw + 5vh + 5rem);
+     animation-name: DropFromLeft;
+     animation-duration: 1s;
+     animation-delay: 500ms;
+}
+@keyframes DropFromLeft{
+     from{right: 100vw;}
+     to{right: 0;}
+}
+@media screen and (max-width: 768px) {
+     .landing-icon{display: none;}
+}
+.custom-shape-divider-top-1643117872 {
+     position: relative;
+     width: 100%;
+     overflow: hidden;
+     line-height: 0;
+     margin-top: 6rem;
+ }
+ 
+ .custom-shape-divider-top-1643117872 svg {
+     position: relative;
+     display: block;
+     width: calc(100% + 1.3px);
+     height: calc(10vh + 1rem);
+ }
+ 
+ .custom-shape-divider-top-1643117872 .shape-fill {
+     fill: var(--green);
+ }

@@ -1,8 +1,9 @@
 nav{
      background: var(--green);
-     border-bottom: 5px solid var(--strong-orange);
+     border-bottom: 5px solid var(--green);
      position: fixed;
      width: 100vw;
+     transition: 1s;
      top: 0;
      height: 6rem;
      z-index: 2;
@@ -13,10 +14,17 @@ nav{
      align-items: center;
      justify-content: space-between;
 }
+nav.active-nav{
+     background: var(--white);
+     border-bottom: 5px solid var(--green);
+}
 nav h2{
      font-size: clamp(2rem, calc(2vh + 2vw), calc(2vh + 2vw));
      margin: 0;
      color: var(--white);
+}
+nav.active-nav h2{
+     color: var(--green);
 }
 @media screen and (max-width: 500px) {
      nav h2{display: none;}
@@ -42,6 +50,9 @@ nav .hamburger span{
      transition: 500ms;
      height: 6px;
      background-color: var(--white);
+}
+nav.active-nav .hamburger span{
+     background-color: var(--green);
 }
 .hamburger span:first-child, .hamburger span:last-child{
      width: 50px;
@@ -92,8 +103,8 @@ aside ul{
      justify-content: center;
 }
 aside ul button div{
-     width: calc(5vw + 4vh + 1rem);
-     height: calc(5vw + 4vh + 1rem);
+     width: calc(5vw + 4vh);
+     height: calc(5vw + 4vh);
 }
 aside ul button div img{
      width: 100%;

@@ -99,7 +99,7 @@ const AdminComponent = () => {
                setPrice(0),
                setCategory("Selecciona la categoria"),
                setBrand("Selecciona la marca"),
-               setDownloadURL(null),
+               setDownloadURL(""),
                toast.success("Listo, subiste el producto con éxito.")
           )
          } else toast.error("Por favor ingeniero, rellene el formulario.")
@@ -168,6 +168,7 @@ const AdminComponent = () => {
                     <label>Elije una imagen</label>
                <input type="file" onChange={UploadFile} accept="image/x-png,image/gif,image/jpeg" />
                {DownloadURL ? <a href={DownloadURL} rel="noreferrer" target="_blank">Link de la imagen</a>:<p>Por favor sube la imagen</p>}
+               <input type={"text"} placeholder='Link de la imagen' value={DownloadURL} onChange={(e) => setDownloadURL(e.target.value)}/>
                <button className='btn-primary' onClick={SubmitFormData} type='button'>
                     Añade el producto
                </button>
