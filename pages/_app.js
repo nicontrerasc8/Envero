@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import '../styles/NavBar.css'
 import '../styles/Admin.css'
 import '../styles/Home.css'
+import '../styles/Brands.css'
 import { Toaster } from 'react-hot-toast'
 import ProductSliders from '../Components/ProductSliders'
 

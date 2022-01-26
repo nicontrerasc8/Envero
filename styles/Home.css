@@ -1,4 +1,4 @@
-.home-page{
+.page{
      padding: 2rem 5vw;
      width: 100vw;
 }
@@ -20,6 +20,16 @@
      grid-gap: 1rem;
      justify-content: space-between;
      align-items: center;
+}
+.landing article{
+     display: flex;
+     flex-direction: column;
+}
+.landing article div{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: flex-start;
+     gap: 5px;
 }
 .landing h2{
      font-size: clamp(2rem, calc(1vh + 2vw + 1rem), calc(1vh + 2vw + 1rem));

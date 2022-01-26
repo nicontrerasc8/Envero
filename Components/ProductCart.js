@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import React from 'react';
+import { DropInFromLeft, DropInFromTop } from '../Lib/Animations';
 import UseGeneralContext from '../Lib/Context';
 
 const ProductCart = ({data, IsAdmin, DeleteProduct}) => {
@@ -10,7 +12,11 @@ const ProductCart = ({data, IsAdmin, DeleteProduct}) => {
           ChangeProductCartValue()
      }
 
-  return <article>
+  return <motion.article
+     variants={DropInFromLeft}
+     initial="hidden"
+     animate="visible"
+  >
        <img src={data.Imagen} loading='lazy'/>
        <h4>
             {data.Producto}
@@ -20,13 +26,13 @@ const ProductCart = ({data, IsAdmin, DeleteProduct}) => {
             <p>Marca: <b>{data.Marca}</b></p>
        </div>
        {
-            IsAdmin ? <button className='btn-primary' onClick={() => DeleteProduct(data.id)}>
+            IsAdmin ? <button className='btn' onClick={() => DeleteProduct(data.id)}>
                Eliminar
-            </button> : <button className='btn-primary' onClick={OpenContainer}>
+            </button> : <button className='btn' onClick={OpenContainer}>
                  Comprar
             </button>
        }
-  </article>;
+  </motion.article>;
 };
 
 export default ProductCart;

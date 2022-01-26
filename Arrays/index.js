@@ -1,3 +1,5 @@
+import { faAppleAlt, faCoffee, faHorse, fas, faSeedling, faWineBottle } from "@fortawesome/free-solid-svg-icons"
+
 export const Categories = [
      {
           text: "Aceite",
@@ -30,19 +32,24 @@ export const Categories = [
 ]
 export const Brands = [
      {
-          text: "La Dehesa"
+          text: "La Dehesa",
+          icon: faSeedling,
      },
      {
           text: "Nutrinellas",
+          icon: faAppleAlt,
      },
      {
-          text: "Green Ocean Coffee"
+          text: "Green Ocean Coffee",
+          icon: faCoffee,
      },
      {
           text: "Castellano",
+          icon: faWineBottle,
      },
      {
-          text: "Andariego"
+          text: "Andariego",
+          icon: faHorse,
      }
 ]
 export const HighlightText = [

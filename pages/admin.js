@@ -40,7 +40,7 @@ const PasswordComponent = () => {
                      <FontAwesomeIcon icon={VisiblePassword ? faEyeSlash : faEye}/>
                 </button>
       </span>
-      <button type='button' className='btn-primary' onClick={VerifyPassword}>
+      <button type='button' className='btn' onClick={VerifyPassword}>
            <strong>
                 Submit
            </strong>
@@ -169,7 +169,7 @@ const AdminComponent = () => {
                <input type="file" onChange={UploadFile} accept="image/x-png,image/gif,image/jpeg" />
                {DownloadURL ? <a href={DownloadURL} rel="noreferrer" target="_blank">Link de la imagen</a>:<p>Por favor sube la imagen</p>}
                <input type={"text"} placeholder='Link de la imagen' value={DownloadURL} onChange={(e) => setDownloadURL(e.target.value)}/>
-               <button className='btn-primary' onClick={SubmitFormData} type='button'>
+               <button className='btn' onClick={SubmitFormData} type='button'>
                     Añade el producto
                </button>
           </div>
