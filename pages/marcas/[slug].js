@@ -4,36 +4,34 @@ import MetaTags from "../../Components/MetaTags";
 import ProductCartList from "../../Components/ProductCartList";
 import { firestore } from "../../Lib/Firebase";
 
-const Brand = () => {
+const Brand = ({Products}) => {
 
-     const [Data, setData] = useState([]);
      const router = useRouter()
-     const { slug } = router.query
-
-     useEffect(() => {
-          console.log(slug)
-          setData([])
-          if(slug){
-               const CartCollection = firestore.collection("products").where("Marca", "==", slug)
-          CartCollection.get().then(
-               (querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                         setData(Data => [...Data, doc.data()])
-                    })
-               }
-            )
-          }
-          else router.push("/")
-     }, [slug]);
-     
+     const {slug} = router.query
 
   return <>
      <MetaTags title={slug + " | SuMarket"}/>
      <div className='home-page'>
           <h2>{slug}</h2>
-          <ProductCartList IsAdmin={false} carts={Data}/>
+          <ProductCartList IsAdmin={false} carts={Products}/>
      </div>;
   </>
 };
 
 export default Brand;
+
+export async function getServerSideProps({query}){
+     var {slug} = query
+     var ProductsQuery = firestore.collection("products").where("Marca", "==", slug)
+     var Products = []
+
+     await ProductsQuery.get().then(
+          (querySnapshot) => {
+               querySnapshot.forEach((doc) => {
+                    Products.push(doc.data())
+               })
+          }
+     )
+
+     return {props: {Products}}
+}

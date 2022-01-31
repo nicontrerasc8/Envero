@@ -1,39 +1,49 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import LoadingComponent from "../../Components/Loading";
 import MetaTags from "../../Components/MetaTags";
 import ProductCartList from "../../Components/ProductCartList";
 import { firestore } from "../../Lib/Firebase";
 
-const Category = () => {
+const Category = ({Products}) => {
 
-     const [Data, setData] = useState([]);
      const router = useRouter()
-     const { slug } = router.query
-
+     const { slug } = router.query  
+     const [IsLoaded, setIsLoaded] = useState(false);
+     
      useEffect(() => {
-          console.log(slug)
-          setData([])
-          if(slug){
-               const CartCollection = firestore.collection("products").where("Categoria", "==", slug)
-          CartCollection.get().then(
-               (querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                         setData(Data => [...Data, doc.data()])
-                    })
-               }
-            )
-          }
-          else router.push("/")
+          setIsLoaded(false)
+       setTimeout(() => {
+            setIsLoaded(true)
+       }, 1000);
      }, [slug]);
      
 
   return <>
      <MetaTags title={slug + " | SuMarket"}/>
-     <div className='home-page'>
-          <h2>Categoría: {slug}</h2>
-          <ProductCartList IsAdmin={false} carts={Data}/>
-     </div>;
+    {
+         IsLoaded ? <div className='home-page'>
+               <h2>Categoría: {slug}</h2>
+               <ProductCartList IsAdmin={false} carts={Products}/>
+          </div> : <LoadingComponent/>
+    }
   </>
 };
 
 export default Category;
+
+export async function getServerSideProps({query}){
+     var {slug} = query
+     var ProductsQuery = firestore.collection("products").where("Categoria", "==", slug)
+     var Products = []
+
+     await ProductsQuery.get().then(
+          (querySnapshot) => {
+               querySnapshot.forEach((doc) => {
+                    Products.push(doc.data())
+               })
+          }
+     )
+
+     return {props: {Products}}
+}
