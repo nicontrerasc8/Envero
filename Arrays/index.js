@@ -34,22 +34,27 @@ export const Brands = [
      {
           text: "La Dehesa",
           icon: faSeedling,
+          phone: 949161510
      },
      {
           text: "Nutrinellas",
           icon: faAppleAlt,
+          phone: 949161510
      },
      {
           text: "Green Ocean Coffee",
           icon: faCoffee,
+          phone: 964835771
      },
      {
           text: "Castellano",
           icon: faWineBottle,
+          phone: 964835771
      },
      {
           text: "Andariego",
           icon: faHorse,
+          phone: 964835771
      }
 ]
 export const HighlightText = [

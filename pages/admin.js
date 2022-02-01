@@ -70,7 +70,7 @@ const AdminComponent = () => {
           const task = ref.put(file)
 
           task
-          .then((d) => ref.getDownloadURL())
+          .then(() => ref.getDownloadURL())
           .then((url) => {
                setDownloadURL(url);
                setLoading(false)

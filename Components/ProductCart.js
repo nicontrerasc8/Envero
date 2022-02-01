@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { DropInFromLeft, DropInFromTop } from '../Lib/Animations';
+import { DropInFromLeft } from '../Lib/Animations';
 import UseGeneralContext from '../Lib/Context';
 
 const ProductCart = ({data, IsAdmin, DeleteProduct}) => {
