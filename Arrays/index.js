@@ -37,10 +37,10 @@ export const Categories = [
           url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Foutput-onlinepngtools%20(13).png?alt=media&token=b016c949-d548-435d-b435-7cb9125509fb",
           text:"Licores",
      },
-     {
+     /* {
           url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Foutput-onlinepngtools%20(2).png?alt=media&token=4c0e230d-a295-4ce6-bd77-bde2a2c90ef1",
           text: "Postres"
-     }
+     } */
      
 ]
 export const Brands = [
