@@ -41,7 +41,11 @@ const ProductSliders = () => {
                </button>
           </span>
             <p>Precio total: <strong>s/.{Counter * ProductData.Precio}</strong></p>
+<<<<<<< HEAD
             <a target={"_blank"} rel='noreferrer' href={`https://api.whatsapp.com/send?phone=51${ProductData.phone ? ProductData.phone : 949161510}&text=${`¡Hola! vengo de la web de SuMarket. Me gustaría ordenar ${Counter} unidad${Counter > 1 ? "es": ""} de ${ProductData.Producto}.`}`}>
+=======
+            <a target={"_blank"} rel='noreferrer' href={`https://api.whatsapp.com/send?phone=51998855069&text=${`¡Hola! vengo de la web de SuMarket. Me gustaría ordenar ${Counter} unidad${Counter > 1 ? "es": ""} de ${ProductData.Producto}.`}`}>
+>>>>>>> bf36a9d8ccb18f127a40508f13e1401dd6ec7fec
                  <button className='btn'>
                     Comprar
                  </button>
