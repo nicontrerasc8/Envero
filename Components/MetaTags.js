@@ -8,6 +8,7 @@ const MetaTags = ({
      return <Head>
           <title>{title}</title>
           <meta name='description' content={description}/>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NPEF0B5KT"></script>
      </Head>
 }
 

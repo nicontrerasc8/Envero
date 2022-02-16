@@ -26,9 +26,6 @@ nav h2{
 nav.active-nav h2{
      color: var(--green);
 }
-@media screen and (max-width: 500px) {
-     nav h2{display: none;}
-}
 nav .hamburger{
      position: relative;
      z-index: 4;
@@ -37,7 +34,7 @@ nav .hamburger{
      height: 80px;
      cursor: pointer;
   transition: all .5s ease-in-out;
-     display: flex;
+     display: none;
   justify-content: center;
   gap: 10px;
   flex-direction: column;
@@ -75,32 +72,35 @@ aside{
      top: 6rem;
      padding: 10px 1vw;
      z-index: 4;
-     height: calc(100vh - 6rem);
      right: -100vw;
-     background-color: var(--white);
+     background-color: var(--green-opacity);
      width: 100vw;
      color: var(--black);
-     display: flex;
+     display: none;
      flex-direction: column;
      align-items: center;
+     gap: 10px;
      text-align: center;
+}
+aside button.btn{
+     font-size: calc(1rem + 1vmax);
 }
 .ActiveAside{
      right: 0;
+}
+.nav-buttons{
+     display: flex;
+     gap: 10px;
+}
+@media screen and (max-width: 768px){
+     aside{display: flex;}
+     nav .hamburger{display: flex;}
+     .nav-buttons{display: none;}
 }
 aside h2{
      font-size: clamp(2rem, calc(2vh + 2vw), calc(2vh + 2vw));
      margin: 0;
      padding:0;
-}
-aside ul{
-     margin: 10px 0;
-     padding: 0;
-     width: 100%;
-     display: flex;
-     flex-wrap: wrap;
-     gap: 10px;
-     justify-content: center;
 }
 aside ul button div{
      width: calc(5vw + 4vh);

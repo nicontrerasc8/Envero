@@ -1,4 +1,4 @@
-import { faAppleAlt, faCoffee, faHorse, fas, faSeedling, faWineBottle } from "@fortawesome/free-solid-svg-icons"
+import { faAppleAlt, faBirthdayCake, faCoffee, faCookieBite, faFish, faHorse, faOilCan, fas, faSeedling, faWineBottle } from "@fortawesome/free-solid-svg-icons"
 
 export const Categories = [
      {
@@ -11,7 +11,15 @@ export const Categories = [
      },
      {
           url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Fcereales.svg?alt=media&token=282ff6d6-e8aa-44d6-9c64-0589dd210996",
-          text:"Cereales"
+          text:"Cereales",
+     },
+     {
+          url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Foutput-onlinepngtools%20(1).png?alt=media&token=b4067090-30ff-47ff-ac3b-811b994f39d6",
+          text: "Comida marina"
+     },
+     {
+          url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Foutput-onlinepngtools.png?alt=media&token=75d060e1-1dae-4f9d-aefc-227bc7c8b160",
+          text: "Embutidos"
      },
      {
           url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Ffrutos-secos.svg?alt=media&token=d09bc00c-2672-490e-9b6d-8abc30bfeb9d",
@@ -28,9 +36,34 @@ export const Categories = [
      {
           url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Foutput-onlinepngtools%20(13).png?alt=media&token=b016c949-d548-435d-b435-7cb9125509fb",
           text:"Licores",
+     },
+     {
+          url: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/root%2Foutput-onlinepngtools%20(2).png?alt=media&token=4c0e230d-a295-4ce6-bd77-bde2a2c90ef1",
+          text: "Postres"
      }
+     
 ]
 export const Brands = [
+     {
+          text: "Castellano",
+          icon: faWineBottle,
+          phone: 964835771
+     },
+     {
+          text: "Andariego",
+          icon: faHorse,
+          phone: 964835771
+     },
+     {
+          text: "La Eskina del Yuka",
+          icon: faFish,
+          phone: 977368487
+     },
+     /* {
+          text: "Cookie Monster",
+          icon: faCookieBite,
+          phone: 999918416
+     }, */
      {
           text: "La Dehesa",
           icon: faSeedling,
@@ -46,16 +79,11 @@ export const Brands = [
           icon: faCoffee,
           phone: 964835771
      },
-     {
-          text: "Castellano",
-          icon: faWineBottle,
-          phone: 964835771
-     },
-     {
-          text: "Andariego",
-          icon: faHorse,
-          phone: 964835771
-     }
+     /* {
+          text: "Sweet Amore",
+          icon: faBirthdayCake,
+          phone: 998135292
+     }, */
 ]
 export const HighlightText = [
      "Un vinito", "Aceite de oliva", "Café orgánico", "Granola natural", "Miel de abeja", "Pisco peruano", 

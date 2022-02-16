@@ -2,11 +2,11 @@ import { faChevronCircleDown, faChevronCircleUp } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const Selector = ({ChangeOpenValue, TextValue, IsOpen, Options, ChangeFN, ClassName}) => {
+const Selector = ({ChangeOpenValue, TextValue, IsOpen, Options, ChangeFN, ClassName, IsForPhone}) => {
 
-     const ChangeFunction = ({text, phone}) => {
-          if(!phone) ChangeFN(text)
-          else ChangeFN(text, phone)
+     const ChangeFunction = (data) => {
+          ChangeFN(data.text)
+          if(IsForPhone) ChangeFN(data.text, data.phone)
      }
 
   return <div className={ClassName ? ClassName : 'selector'} onClick={ChangeOpenValue}>
@@ -19,7 +19,7 @@ const Selector = ({ChangeOpenValue, TextValue, IsOpen, Options, ChangeFN, ClassN
        {
            (IsOpen && Options.length > 0) && Options.map((data, idx) => {
                  return <em 
-                              onClick={() => ChangeFunction(data.text, data.phone)}
+                              onClick={() => ChangeFunction(data)}
                               key={idx} type='button' >
                       {data.text}
                  </em>

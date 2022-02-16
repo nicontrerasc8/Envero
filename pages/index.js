@@ -11,12 +11,10 @@ import { firestore } from '../Lib/Firebase'
 
 const Landing = () => {
 
-  const { setOpenNav } = UseGeneralContext()
   const router = useRouter()
 
   const SearchBrands = () => router.push("/marcas")
-
-  const OpenNavBar = () => setOpenNav(true)
+  const SearchCategories = () => router.push("/categoria")
 
   return <div className='landing'>
     <article>
@@ -26,7 +24,7 @@ const Landing = () => {
                 words={HighlightText}/>.
           </span></h2>
         <div>
-        <button onClick={OpenNavBar} className='btn'>Buscar productos</button>
+        <button onClick={SearchCategories} className='btn'>Buscar productos</button>
         <button onClick={SearchBrands} className='btn secondary-btn'>
           Buscar marcas
         </button>

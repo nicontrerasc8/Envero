@@ -49,11 +49,13 @@ const PasswordComponent = () => {
 }
 
 
+
 const AdminComponent = () => {
 
      const [ProductName, setProductName] = useState("");
      const [Category, setCategory] = useState("Selecciona la categoria");
      const [OpenCategory, setOpenCategory] = useState(false);
+     const [PhoneNumber, setPhoneNumber] = useState("")
      const [Brand, setBrand] = useState("Selecciona la marca");
      const [OpenBrand, setOpenBrand] = useState(false);
      const [Price, setPrice] = useState(Number);
@@ -88,6 +90,7 @@ const AdminComponent = () => {
                ProductDoc, {
                     Producto: ProductName,
                     Precio: Price,
+                    phone: PhoneNumber,
                     Categoria: Category,
                     Marca: Brand,
                     Imagen: DownloadURL,
@@ -110,8 +113,9 @@ const AdminComponent = () => {
           setOpenCategory(false)
      }
 
-     const ChangeBrand = (data) => {
+     const ChangeBrand = (data, phone) => {
           setBrand(data)
+          setPhoneNumber(phone)
           setOpenBrand(false)
      }
 
