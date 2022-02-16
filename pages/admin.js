@@ -167,6 +167,7 @@ const AdminComponent = () => {
                          TextValue={Brand}
                          IsOpen={OpenBrand}
                          Options={Brands}
+                         IsForPhone
                          ChangeFN={ChangeBrand}
                     />
                     <label>Elije una imagen</label>
